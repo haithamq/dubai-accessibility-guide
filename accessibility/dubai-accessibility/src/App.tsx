@@ -4,6 +4,9 @@ import Navigation from './components/Layout/Navigation';
 import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage';
 import PlacesPage from './pages/PlacesPage';
+import AccessibilitySettings from './pages/AccessibilitySettings';
+import AccessibilityButton from './components/AccessibilityButton';
+import AccessibilityIndicator from './components/AccessibilityIndicator';
 
 type Page = 'home' | 'places' | 'favorites' | 'settings' | 'about';
 
@@ -44,14 +47,7 @@ const App: React.FC = () => {
           </div>
         );
       case 'settings':
-        return (
-          <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-gray-800 mb-4">Accessibility Settings</h1>
-              <p className="text-gray-600">Customize your accessibility preferences here.</p>
-            </div>
-          </div>
-        );
+        return <AccessibilitySettings />;
       case 'about':
         return (
           <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -90,10 +86,13 @@ const App: React.FC = () => {
       {/* Skip to main content link for screen readers */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded z-50"
       >
         Skip to main content
       </a>
+
+      {/* Accessibility Status Indicator */}
+      <AccessibilityIndicator />
 
       {/* Header */}
       <Header
@@ -116,6 +115,9 @@ const App: React.FC = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Accessibility Button */}
+      <AccessibilityButton onNavigateToSettings={() => setCurrentPage('settings')} />
 
       {/* Accessibility Announcements */}
       <div

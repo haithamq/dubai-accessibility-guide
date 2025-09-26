@@ -109,4 +109,133 @@
     clip: auto;
     white-space: normal;
   }
+
+  /* Accessibility Settings CSS */
+  
+  /* High Contrast Mode */
+  .high-contrast {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 60 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 30%;
+    --input: 0 0% 20%;
+    --ring: 60 100% 50%;
+  }
+
+  /* Text Size Options */
+  .text-small {
+    font-size: 14px;
+  }
+
+  .text-normal {
+    font-size: 16px;
+  }
+
+  .text-large {
+    font-size: 18px;
+  }
+  
+  .text-large * {
+    font-size: 1.125em !important;
+  }
+
+  .text-extra-large {
+    font-size: 20px;
+  }
+  
+  .text-extra-large * {
+    font-size: 1.25em !important;
+  }
+
+  /* Large Text Mode */
+  .large-text {
+    font-size: 18px;
+  }
+  
+  .large-text h1 {
+    font-size: 3rem !important;
+  }
+  
+  .large-text h2 {
+    font-size: 2.5rem !important;
+  }
+  
+  .large-text h3 {
+    font-size: 2rem !important;
+  }
+  
+  .large-text p, .large-text span, .large-text div {
+    font-size: 1.125rem !important;
+  }
+
+  /* Reduced Motion */
+  .reduced-motion *,
+  .reduced-motion *::before,
+  .reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Enhanced Focus Indicators */
+  .enhanced-focus *:focus {
+    outline: 4px solid #FFD700 !important;
+    outline-offset: 4px !important;
+    box-shadow: 0 0 0 8px rgba(255, 215, 0, 0.3) !important;
+  }
+
+  .enhanced-focus button:focus,
+  .enhanced-focus a:focus,
+  .enhanced-focus input:focus,
+  .enhanced-focus select:focus,
+  .enhanced-focus textarea:focus {
+    background-color: #FFFACD !important;
+    color: #000 !important;
+  }
+
+  /* Color Blind Support */
+  .protanopia {
+    filter: url('#protanopia-filter');
+  }
+
+  .deuteranopia {
+    filter: url('#deuteranopia-filter');
+  }
+
+  .tritanopia {
+    filter: url('#tritanopia-filter');
+  }
+
+  /* Color blind simulation filters */
+  .protanopia img,
+  .protanopia .bg-primary,
+  .protanopia .text-primary {
+    filter: sepia(100%) saturate(0%) hue-rotate(0deg);
+  }
+
+  .deuteranopia img,
+  .deuteranopia .bg-primary,
+  .deuteranopia .text-primary {
+    filter: sepia(100%) saturate(50%) hue-rotate(90deg);
+  }
+
+  .tritanopia img,
+  .tritanopia .bg-primary,
+  .tritanopia .text-primary {
+    filter: sepia(100%) saturate(50%) hue-rotate(180deg);
+  }
 }

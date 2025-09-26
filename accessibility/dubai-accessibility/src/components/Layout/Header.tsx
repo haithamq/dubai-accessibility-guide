@@ -1,6 +1,7 @@
 import React from 'react';
-import { Search, Menu, Accessibility } from 'lucide-react';
+import { Search, Menu, Accessibility, Heart } from 'lucide-react';
 import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
 
 interface HeaderProps {
   onMenuToggle: () => void;
@@ -11,47 +12,74 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle, onSearchFocus }) => {
   return (
     <header 
       role="banner" 
-      className="bg-primary text-primary-foreground shadow-lg"
+      className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white shadow-xl border-b-4 border-gradient-to-r from-yellow-400 to-pink-400"
       aria-label="Main header"
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo and Title */}
-          <div className="flex items-center space-x-3">
+          {/* Logo and Brand */}
+          <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
               size="icon"
               onClick={onMenuToggle}
-              className="text-primary-foreground hover:bg-primary/90"
+              className="text-white hover:bg-white/20 transition-all duration-300 rounded-full"
               aria-label="Toggle navigation menu"
               aria-expanded="false"
             >
               <Menu size={24} aria-hidden="true" />
             </Button>
-            <div className="flex items-center space-x-2">
-              <Accessibility size={32} aria-hidden="true" />
-              <h1 className="text-xl font-bold">
-                Dubai Accessibility Guide
-              </h1>
+            <div className="flex items-center space-x-3">
+              <div className="relative p-2 bg-white/10 rounded-full backdrop-blur-sm">
+                <Accessibility size={32} className="text-white" aria-hidden="true" />
+                <div className="absolute -top-1 -right-1">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                </div>
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-white">
+                  Dubai Accessibility Guide
+                </h1>
+                <div className="flex items-center space-x-2 mt-1">
+                  <Badge variant="secondary" className="text-xs bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                    <Heart size={12} className="mr-1 text-red-400" />
+                    Inclusive Design
+                  </Badge>
+                  <Badge variant="secondary" className="text-xs bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                    ✨ Premium Experience
+                  </Badge>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Search Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onSearchFocus}
-            className="text-primary-foreground hover:bg-primary/90"
-            aria-label="Open search"
-          >
-            <Search size={24} aria-hidden="true" />
-          </Button>
+          {/* Action Buttons */}
+          <div className="flex items-center space-x-3">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onSearchFocus}
+              className="text-white hover:bg-white/20 transition-all duration-300 rounded-full"
+              aria-label="Open search"
+            >
+              <Search size={24} aria-hidden="true" />
+            </Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              className="hidden md:flex bg-white/90 text-blue-600 hover:bg-white shadow-lg backdrop-blur-sm"
+            >
+              🌟 Discover
+            </Button>
+          </div>
         </div>
 
-        {/* Subtitle */}
-        <p className="mt-2 text-primary-foreground/80 text-sm">
-          Discover accessible places and activities in Dubai for everyone
-        </p>
+        {/* Elegant Subtitle */}
+        <div className="mt-4 text-center">
+          <p className="text-white/90 text-lg font-medium">
+            ✨ Discover accessible places and activities in Dubai designed for everyone ✨
+          </p>
+        </div>
       </div>
     </header>
   );
