@@ -38,8 +38,8 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ place, onViewDetails }) => {
       aria-label={`View details for ${place.name}`}
     >
       {/* Image Placeholder */}
-      <div className="h-48 bg-gradient-to-br from-primary/80 to-primary rounded-t-lg flex items-center justify-center">
-        <div className="text-primary-foreground text-center">
+      <div className="h-48 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-t-lg flex items-center justify-center">
+        <div className="text-white text-center">
           <div className="text-4xl mb-2">🏛️</div>
           <p className="text-sm font-medium">{place.name}</p>
         </div>
@@ -59,7 +59,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ place, onViewDetails }) => {
           {place.verified && (
             <CheckCircle 
               size={20} 
-              className="text-green-500 ml-2" 
+              className="text-emerald-500 ml-2" 
               aria-label="Verified accessibility information"
             />
           )}
@@ -74,7 +74,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ place, onViewDetails }) => {
         {/* Rating and Price */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center">
-            <Star size={16} className="text-yellow-500 mr-1 fill-current" aria-hidden="true" />
+            <Star size={16} className="text-amber-500 mr-1 fill-current" aria-hidden="true" />
             <span className="text-sm font-medium">
               {place.rating}
             </span>

@@ -39,10 +39,10 @@ const App: React.FC = () => {
         return <PlacesPage />;
       case 'favorites':
         return (
-          <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-sky-50 to-blue-50 flex items-center justify-center">
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-gray-800 mb-4">Favorites</h1>
-              <p className="text-gray-600">Your favorite places will appear here.</p>
+              <h1 className="text-3xl font-bold text-foreground mb-4">Favorites</h1>
+              <p className="text-muted-foreground">Your favorite places will appear here.</p>
             </div>
           </div>
         );
@@ -50,23 +50,23 @@ const App: React.FC = () => {
         return <AccessibilitySettings />;
       case 'about':
         return (
-          <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50 flex items-center justify-center">
             <div className="text-center max-w-2xl mx-auto px-4">
-              <h1 className="text-3xl font-bold text-gray-800 mb-4">About Dubai Accessibility Guide</h1>
-              <p className="text-gray-600 mb-6">
+              <h1 className="text-3xl font-bold text-foreground mb-4">About Dubai Accessibility Guide</h1>
+              <p className="text-muted-foreground mb-6">
                 We're committed to making Dubai accessible for everyone. Our comprehensive guide 
                 helps visitors with disabilities discover places and activities that meet their 
                 specific accessibility needs.
               </p>
-              <div className="bg-white p-6 rounded-lg shadow-md text-left">
-                <h2 className="text-xl font-semibold mb-4">Our Mission</h2>
-                <p className="text-gray-700 mb-4">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg text-left">
+                <h2 className="text-xl font-semibold text-primary mb-4">Our Mission</h2>
+                <p className="text-foreground mb-4">
                   To provide accurate, up-to-date accessibility information for Dubai's attractions, 
                   restaurants, hotels, and activities, ensuring that everyone can enjoy the city's 
                   incredible experiences.
                 </p>
-                <h2 className="text-xl font-semibold mb-4">Accessibility Standards</h2>
-                <ul className="text-gray-700 space-y-2">
+                <h2 className="text-xl font-semibold text-primary mb-4">Accessibility Standards</h2>
+                <ul className="text-foreground space-y-2">
                   <li>• WCAG 2.1 AA compliant website</li>
                   <li>• Verified accessibility information</li>
                   <li>• Community-driven updates</li>
@@ -82,7 +82,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Skip to main content link for screen readers */}
       <a
         href="#main-content"

@@ -27,11 +27,11 @@ const DisabilityFilter: React.FC<DisabilityFilterProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">
+    <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md p-6">
+      <h2 className="text-xl font-semibold text-foreground mb-4">
         Filter by Accessibility Needs
       </h2>
-      <p className="text-gray-600 text-sm mb-6">
+      <p className="text-muted-foreground text-sm mb-6">
         Select the types of accessibility features you need to find suitable places.
       </p>
       
@@ -47,9 +47,9 @@ const DisabilityFilter: React.FC<DisabilityFilterProps> = ({
               onKeyDown={(e) => handleKeyDown(e, disability)}
               className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
                 isSelected
-                  ? 'border-blue-500 bg-blue-50 shadow-md'
-                  : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm'
-              } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+                  ? 'border-primary bg-gradient-to-br from-cyan-50 to-blue-50 shadow-md'
+                  : 'border-border bg-white hover:border-primary/30 hover:shadow-sm'
+              } focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2`}
               role="checkbox"
               aria-checked={isSelected}
               tabIndex={0}
@@ -60,18 +60,18 @@ const DisabilityFilter: React.FC<DisabilityFilterProps> = ({
                   {info.icon}
                 </span>
                 <div className="flex-1">
-                  <h3 className="font-medium text-gray-800">
+                  <h3 className="font-medium text-foreground">
                     {info.name}
                   </h3>
                   <p 
                     id={`${disability}-description`}
-                    className="text-sm text-gray-600 mt-1"
+                    className="text-sm text-muted-foreground mt-1"
                   >
                     {info.description}
                   </p>
                 </div>
                 {isSelected && (
-                  <div className="text-blue-500" aria-hidden="true">
+                  <div className="text-primary" aria-hidden="true">
                     ✓
                   </div>
                 )}
@@ -82,15 +82,15 @@ const DisabilityFilter: React.FC<DisabilityFilterProps> = ({
       </div>
       
       {selectedDisabilities.length > 0 && (
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-          <h3 className="font-medium text-blue-900 mb-2">
+        <div className="mt-6 p-4 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg border border-primary/20">
+          <h3 className="font-medium text-primary mb-2">
             Selected Accessibility Needs:
           </h3>
           <div className="flex flex-wrap gap-2">
             {selectedDisabilities.map(disability => (
               <span
                 key={disability}
-                className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800"
+                className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-white border border-primary/30 text-foreground"
               >
                 {disabilityTypeInfo[disability].icon} {disabilityTypeInfo[disability].name}
                 <button
@@ -98,7 +98,7 @@ const DisabilityFilter: React.FC<DisabilityFilterProps> = ({
                     e.stopPropagation();
                     handleDisabilityToggle(disability);
                   }}
-                  className="ml-2 text-blue-600 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                  className="ml-2 text-primary hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary rounded"
                   aria-label={`Remove ${disabilityTypeInfo[disability].name} filter`}
                 >
                   ×

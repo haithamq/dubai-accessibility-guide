@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <footer 
       role="contentinfo" 
-      className="bg-gray-800 text-white py-8 mt-12"
+      className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white py-8 mt-12"
       aria-label="Site footer"
     >
       <div className="container mx-auto px-4">
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                 <Mail size={16} aria-hidden="true" />
                 <a 
                   href="mailto:info@dubaiaccessibility.ae" 
-                  className="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                  className="text-gray-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded transition-colors"
                 >
                   info@dubaiaccessibility.ae
                 </a>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 <Phone size={16} aria-hidden="true" />
                 <a 
                   href="tel:+971-4-123-4567" 
-                  className="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                  className="text-gray-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded transition-colors"
                 >
                   +971 4 123 4567
                 </a>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                 <Globe size={16} aria-hidden="true" />
                 <a 
                   href="https://www.dubaiaccessibility.ae" 
-                  className="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                  className="text-gray-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -82,19 +82,19 @@ const Footer: React.FC = () => {
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a 
                 href="/privacy" 
-                className="text-gray-400 hover:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                className="text-gray-400 hover:text-cyan-400 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded transition-colors"
               >
                 Privacy Policy
               </a>
               <a 
                 href="/terms" 
-                className="text-gray-400 hover:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                className="text-gray-400 hover:text-cyan-400 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded transition-colors"
               >
                 Terms of Service
               </a>
               <a 
                 href="/accessibility" 
-                className="text-gray-400 hover:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                className="text-gray-400 hover:text-cyan-400 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded transition-colors"
               >
                 Accessibility Statement
               </a>
