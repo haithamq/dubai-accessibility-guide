@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dubai-accessibility-guide/static/css/main.7fe5c503.css",
+    "main.js": "/dubai-accessibility-guide/static/js/main.9a38be0b.js",
+    "static/js/453.f7daa562.chunk.js": "/dubai-accessibility-guide/static/js/453.f7daa562.chunk.js",
+    "index.html": "/dubai-accessibility-guide/index.html",
+    "main.7fe5c503.css.map": "/dubai-accessibility-guide/static/css/main.7fe5c503.css.map",
+    "main.9a38be0b.js.map": "/dubai-accessibility-guide/static/js/main.9a38be0b.js.map",
+    "453.f7daa562.chunk.js.map": "/dubai-accessibility-guide/static/js/453.f7daa562.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7fe5c503.css",
+    "static/js/main.9a38be0b.js"
+  ]
+}
