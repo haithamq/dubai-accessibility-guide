@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle, onSearchFocus }) => {
   return (
     <header 
       role="banner" 
-      className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white shadow-xl border-b-4 border-gradient-to-r from-yellow-400 to-pink-400"
+      className="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white shadow-xl border-b-4 border-gradient-to-r from-teal-400 to-sky-400"
       aria-label="Main header"
     >
       <div className="container mx-auto px-6 py-4">
@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle, onSearchFocus }) => {
             <Button
               variant="secondary"
               size="sm"
-              className="hidden md:flex bg-white/90 text-blue-600 hover:bg-white shadow-lg backdrop-blur-sm"
+              className="hidden md:flex bg-white/90 text-cyan-600 hover:bg-white shadow-lg backdrop-blur-sm"
             >
               🌟 Discover
             </Button>

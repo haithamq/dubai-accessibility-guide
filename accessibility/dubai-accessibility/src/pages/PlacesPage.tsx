@@ -55,14 +55,14 @@ const PlacesPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-sky-50 to-blue-50">
       <div className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          <h1 className="text-3xl font-bold text-foreground mb-2">
             Accessible Places in Dubai
           </h1>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Discover places and activities that accommodate your accessibility needs
           </p>
         </div>
@@ -83,32 +83,32 @@ const PlacesPage: React.FC = () => {
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center px-4 py-2 rounded-lg border transition-colors ${
                   showFilters
-                    ? 'bg-blue-600 text-white border-blue-600'
-                    : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
-                } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white border-cyan-600'
+                    : 'bg-white text-foreground border-border hover:bg-muted'
+                } focus:outline-none focus:ring-2 focus:ring-primary`}
                 aria-expanded={showFilters}
                 aria-controls="filters-panel"
               >
                 <Filter size={18} className="mr-2" aria-hidden="true" />
                 Filters
                 {filterOptions.disabilityTypes.length > 0 && (
-                  <span className="ml-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                  <span className="ml-2 px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded-full">
                     {filterOptions.disabilityTypes.length}
                   </span>
                 )}
               </button>
 
-              <div className="flex items-center border border-gray-300 rounded-lg">
+              <div className="flex items-center border border-border rounded-lg bg-white">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 ${viewMode === 'grid' ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-100'} focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-l-lg`}
+                  className={`p-2 ${viewMode === 'grid' ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white' : 'text-muted-foreground hover:bg-muted'} focus:outline-none focus:ring-2 focus:ring-primary rounded-l-lg transition-colors`}
                   aria-label="Grid view"
                 >
                   <Grid size={18} aria-hidden="true" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 ${viewMode === 'list' ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-100'} focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-r-lg`}
+                  className={`p-2 ${viewMode === 'list' ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white' : 'text-muted-foreground hover:bg-muted'} focus:outline-none focus:ring-2 focus:ring-primary rounded-l-lg transition-colors`}
                   aria-label="List view"
                 >
                   <List size={18} aria-hidden="true" />
@@ -116,7 +116,7 @@ const PlacesPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-muted-foreground">
               Showing {dubaiPlaces.length} places
             </div>
           </div>
@@ -133,8 +133,8 @@ const PlacesPage: React.FC = () => {
                 />
 
                 {/* Category Filter */}
-                <div className="bg-white rounded-lg shadow-md p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Categories
                   </h3>
                   <div className="space-y-2">
@@ -152,17 +152,17 @@ const PlacesPage: React.FC = () => {
                               categories: newCategories
                             }));
                           }}
-                          className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                          className="rounded border-border text-primary focus:ring-primary"
                         />
-                        <span className="ml-2 text-gray-700">{category.label}</span>
+                        <span className="ml-2 text-foreground">{category.label}</span>
                       </label>
                     ))}
                   </div>
                 </div>
 
                 {/* Price Range Filter */}
-                <div className="bg-white rounded-lg shadow-md p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Price Range
                   </h3>
                   <div className="space-y-2">
@@ -180,17 +180,17 @@ const PlacesPage: React.FC = () => {
                               priceRange: newPriceRange
                             }));
                           }}
-                          className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                          className="rounded border-border text-primary focus:ring-primary"
                         />
-                        <span className="ml-2 text-gray-700">{price}</span>
+                        <span className="ml-2 text-foreground">{price}</span>
                       </label>
                     ))}
                   </div>
                 </div>
 
                 {/* Rating Filter */}
-                <div className="bg-white rounded-lg shadow-md p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Minimum Rating
                   </h3>
                   <input
@@ -203,11 +203,11 @@ const PlacesPage: React.FC = () => {
                       ...prev,
                       rating: parseFloat(e.target.value)
                     }))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer accent-primary"
                   />
-                  <div className="flex justify-between text-sm text-gray-600 mt-2">
+                  <div className="flex justify-between text-sm text-muted-foreground mt-2">
                     <span>0</span>
-                    <span className="font-medium">{filterOptions.rating.toFixed(1)}</span>
+                    <span className="font-medium text-primary">{filterOptions.rating.toFixed(1)}</span>
                     <span>5.0</span>
                   </div>
                 </div>
